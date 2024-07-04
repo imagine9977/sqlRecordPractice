@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS styles as per the modifications */
+        body {
+            width:1500px;
+            font-family: Arial, sans-serif;
+           
+            margin: 0 auto;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .notice {
+            width: 100%;
+            margin: auto;
+            overflow: hidden;
+            background: #fff; /* Ensure content area has a white background */
+            padding: 20px; /* Add padding for better spacing */
+        }
+        .entry-content {
+            width: 80%; /* Set entry-content width to 80% */
+            margin: auto;
+            overflow: hidden;
+            clear: both; /* Clear float */
+            margin-bottom: 20px;
+        }
+        .go-back {
+            float: left; /* Align to the left */
+            margin-right: 10px; /* Add some margin for spacing */
+        }
+        .admin-actions {
+            float: left; /* Align to the left */
+        }
+        .share {
+            float: right; /* Align to the right */
+        }
+        .button-line button {
+			padding: 10px 20px;
+			background: #2C2C2C;
+			color: #ffffff;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+            margin-right: 10px;;
+		}
+        .file-loader{
+            background: #cacaca;
+            width: 80%;
+            height: 5rem;
+            color: black;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="content" class="site-content">
+        <main id="main" class="site-main">
+            <article id="" class="notice">
+                <header class="entry-header">
+                    <div class="tag">
+                        <a href="https://naver.worksmobile.com/notice/tag/service/"><span>서비스</span></a>
+                    </div>
+                    <h1 class="entry-title">TITLE</h1>
+                    <div class="meta">
+                        <span class="date">2024. 05. 10</span>  
+                    </div>
+                </header>
+                <hr>
+                <div class="file-loader">
+                    <c:choose>
+						<c:when test="${empty board.originName }">
+
+
+							파일이 존재하지 않습니다.
+						</c:when>
+						<c:when test="${empty board.originName }">
+
+
+							<a href="${ board.changeName }"
+								download="${ board.originName }">${ board.originName }</a>
+						</c:when>
+					</c:choose>
+                    
+                </div>
+                <hr>
+                <div class="entry-content post-type-notice">
+                    <!-- Your content goes here -->
+                    <span>가나다라</span>
+                </div><div class="button-line">
+                    <div class="go-back">
+                        <button onclick="">뒤로가기</button>
+                    </div>
+                    <div class="admin-actions">
+                        <!-- These buttons will only be visible if the user is an admin -->
+                        <button>수정하기</button>
+                        <button>삭제하기</button>
+                    </div>
+                    <div class="share">
+                        <!-- Share to SNS functionality -->
+                        Share to SNS:
+                        <!-- Place your share buttons or icons here -->
+                    </div>
+                </div>
+            </article>
+        </main>
+    </div>
+</body>
+</html>
